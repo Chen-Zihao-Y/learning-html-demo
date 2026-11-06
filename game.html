@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dodge Runner Game</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game | Chen Zihao</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <nav class="navbar">
-        <span class="brand">Jerry</span>
+        <span class="brand">Zihao</span>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -17,45 +17,14 @@
         </div>
     </nav>
 
-    <header class="game-header">
-        <h1>Dodge Runner</h1>
-        <p>Use ← → or A / D to move. Avoid the obstacles!</p>
-    </header>
-
-    <main class="game-area">
-        <div class="game-panel">
-            <div class="hud">
-                <span>Score: <strong id="score">0</strong></span>
-                <span>High Score: <strong id="highScore">0</strong></span>
-                <span>Speed: <strong id="speed">1</strong>x</span>
-            </div>
-
-            <div id="gameContainer" class="game-container">
-                <div id="player" class="player"></div>
-
-                <div id="startScreen" class="overlay">
-                    <div class="overlay-box">
-                        <h2>Ready to Run?</h2>
-                        <p>Dodge the falling obstacles as long as you can.</p>
-                        <button id="startBtn" class="primary-btn">Start Game</button>
-                    </div>
-                </div>
-
-                <div id="gameOverScreen" class="overlay hidden">
-                    <div class="overlay-box">
-                        <h2>Game Over</h2>
-                        <p>Your Score: <strong id="finalScore">0</strong></p>
-                        <button id="restartBtn" class="primary-btn">Play Again</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <main class="page-container">
+        <h1>Dodge Runner Game</h1>
+        <p>This is my interactive obstacle dodge runner game. Use keyboard to control and avoid obstacles.</p>
     </main>
 
-    <footer class="game-footer">
-        <p>WebTech Interactive Game Project</p>
+    <footer>
+        <p>Built by Chen Zihao · Web Technologies 2026</p>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
