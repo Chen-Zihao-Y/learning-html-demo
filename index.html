@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chen Zihao | Web Project</title>
+    <title>Contact | Chen Zihao</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -17,25 +17,51 @@
         </div>
     </nav>
 
-    <main class="home-container">
-        <div class="hero-card">
-            <div class="hero-img">
-                <div class="cover-bg"></div>
+    <main class="page-container contact-page">
+        <h1>Contact</h1>
+        <p>Questions about this project, broken links, or feedback — reach me here.</p>
+
+        <section class="contact-direct">
+            <h2>Direct</h2>
+            <div class="contact-row">
+                <span>Email</span>
+                <a href="mailto:x20250015@stu.hibiuh.edu.cn">x20250015@stu.hibiuh.edu.cn</a>
             </div>
-            <h1>Chen Zihao</h1>
-            <p>Computer Science — a website built entirely by hand.</p>
-            <section class="intro-list">
-                <h2>On this site</h2>
-                <ul>
-                    <li><a href="game.html">Dodge Runner Game — my interactive obstacle dodge game</a></li>
-                    <li><a href="about.html">About me — who I am</a></li>
-                    <li><a href="contact.html">Contact — how to reach me</a></li>
-                </ul>
-            </section>
-        </div>
+            <div class="contact-row">
+                <span>GitHub</span>
+                <a href="https://github.com/Chen-Zihao-Y" target="_blank">github.com/Chen-Zihao-Y</a>
+            </div>
+            <div class="contact-row">
+                <span>Source</span>
+                <a href="https://github.com/Chen-Zihao-Y/learning-html-demo" target="_blank">learning-html-demo</a>
+            </div>
+        </section>
+
+        <section class="contact-form-area">
+            <h2>Send a message</h2>
+            <p>This site is static: no server, no database. Send will open Outlook mail app with pre-filled subject.</p>
+
+            <form action="mailto:x20250015@stu.hibiuh.edu.cn" method="GET" enctype="text/plain">
+                <div class="form-item">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="subject" required>
+                </div>
+                <div class="form-item">
+                    <label for="sender-email">Your email *</label>
+                    <input type="email" id="sender-email" name="cc" required>
+                </div>
+                <div class="form-item">
+                    <label for="msg">Message *</label>
+                    <textarea id="msg" name="body" maxlength="500" required></textarea>
+                    <div class="char-count">0 / 500 characters</div>
+                </div>
+                <button type="submit" class="send-btn">Send</button>
+            </form>
+        </section>
     </main>
+
     <footer>
-        <p>Built by Chen Zihao · Web Technologies 2026</p>
+        <p>© 2026 Chen Zihao · built by hand</p>
     </footer>
 </body>
 </html>

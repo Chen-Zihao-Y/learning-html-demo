@@ -5,6 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Chen Zihao</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+.contact-page h1 {
+    font-size:34px;
+    margin-bottom:12px;
+}
+.contact-direct {
+    margin:40px 0;
+}
+.contact-direct h2 {
+    font-size:22px;
+    margin-bottom:16px;
+}
+.contact-row {
+    display:flex;
+    gap:12px;
+    padding:8px 0;
+    border-bottom: 1px solid #333;
+}
+.contact-row span {
+    width:80px;
+    opacity:0.7;
+}
+.contact-row a {
+    color:#ff9b42;
+    text-decoration:none;
+}
+.contact-form-area h2 {
+    font-size:22px;
+    margin:24px 0 12px;
+}
+.contact-form-area p {
+    opacity:0.7;
+    font-size:14px;
+    margin-bottom:24px;
+}
+.form-item {
+    margin-bottom:20px;
+}
+.form-item label {
+    display:block;
+    margin-bottom:6px;
+}
+.form-item input, .form-item textarea {
+    width:100%;
+    background:#222;
+    border:1px solid #444;
+    color:#fff;
+    padding:10px;
+    border-radius:6px;
+}
+.form-item textarea {
+    min-height:160px;
+}
+.char-count {
+    text-align:right;
+    font-size:13px;
+    opacity:0.6;
+    margin-top:4px;
+}
+.send-btn {
+    background:#c86828;
+    color:white;
+    border:none;
+    padding:10px 22px;
+    border-radius:8px;
+    cursor:pointer;
+}
+.send-btn:hover {
+    background:#dd7832;
+}
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -16,12 +87,60 @@
             <a href="contact.html">Contact</a>
         </div>
     </nav>
-    <main class="page-container">
+
+    <main class="page-container contact-page">
         <h1>Contact</h1>
-        <p>Email: youremail@example.com</p>
+        <p>Questions about this project, broken links, or feedback — reach me here.</p>
+
+        <section class="contact-direct">
+            <h2>Direct</h2>
+            <div class="contact-row">
+                <span>Email</span>
+                <a href="mailto:x20250015@stu.hibiuh.edu.cn">x20250015@stu.hibiuh.edu.cn</a>
+            </div>
+            <div class="contact-row">
+                <span>GitHub</span>
+                <a href="https://github.com/Chen-Zihao-Y" target="_blank">github.com/Chen-Zihao-Y</a>
+            </div>
+            <div class="contact-row">
+                <span>Source</span>
+                <a href="https://github.com/Chen-Zihao-Y/learning-html-demo" target="_blank">learning-html-demo</a>
+            </div>
+        </section>
+
+        <section class="contact-form-area">
+            <h2>Send a message</h2>
+            <p>This site is static: no server, no database. Send will open Outlook mail app with pre-filled subject.</p>
+
+            <form action="mailto:x20250015@stu.hibiuh.edu.cn" method="GET" enctype="text/plain">
+                <div class="form-item">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="subject" required>
+                </div>
+                <div class="form-item">
+                    <label for="sender-email">Your email *</label>
+                    <input type="email" id="sender-email" name="cc" required>
+                </div>
+                <div class="form-item">
+                    <label for="msg">Message *</label>
+                    <textarea id="msg" name="body" maxlength="500" required></textarea>
+                    <div class="char-count">0 / 500 characters</div>
+                </div>
+                <button type="submit" class="send-btn">Send</button>
+            </form>
+        </section>
     </main>
+
     <footer>
-        <p>Built by Chen Zihao · Web Technologies 2026</p>
+        <p>© 2026 Chen Zihao · built by hand</p>
     </footer>
+
+<script>
+const textarea = document.getElementById('msg');
+const countEl = document.querySelector('.char-count');
+textarea.addEventListener('input', ()=>{
+    countEl.textContent = `${textarea.value.length} / 500 characters`;
+})
+</script>
 </body>
 </html>
