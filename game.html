@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game | Chen Zihao</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        #gameCanvas {
+            border: 2px solid #333;
+            background: #f9f6ee;
+            display:block;
+            margin: 20px auto;
+            border-radius:8px;
+        }
+        .game-info{
+            text-align:center;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -18,13 +30,89 @@
     </nav>
 
     <main class="page-container">
-        <h1>Dodge Runner Game</h1>
-        <p>This is my interactive obstacle dodge runner game. Use keyboard to control and avoid obstacles.</p>
+        <h1 style="text-align:center;">Dodge Runner Game</h1>
+        <p class="game-info">Use ← → arrow keys to move, avoid falling blocks. Score will increase over time.</p>
+        <p class="game-info">Score: <span id="score">0</span></p>
+        <canvas id="gameCanvas" width="600" height="400"></canvas>
     </main>
 
     <footer>
         <p>Built by Chen Zihao · Web Technologies 2026</p>
     </footer>
-    <script src="./script.js"></script>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const scoreEl = document.getElementById('score');
+
+let player = {x: 270, y: 350, w:60, h:40, speed:8};
+let obstacles = [];
+let score = 0;
+let gameOver = false;
+let keys = {};
+
+document.addEventListener('keydown', e=>{
+    keys[e.key] = true;
+})
+document.addEventListener('keyup', e=>{
+    keys[e.key] = false;
+})
+
+function spawnObstacle(){
+    const w = 40 + Math.random()*40;
+    obstacles.push({
+        x: Math.random()*(canvas.width - w),
+        y: -40,
+        w: w,
+        h:30,
+        speed: 4 + score/30
+    })
+}
+
+function rectCollision(a,b){
+    return a.x < b.x+b.w && a.x+a.w > b.x && a.y < b.y+b.h && a.y+a.h > b.y;
+}
+
+function loop(){
+    if(gameOver){
+        ctx.fillStyle="#222";
+        ctx.font="32px sans-serif";
+        ctx.textAlign="center";
+        ctx.fillText("Game Over", canvas.width/2, canvas.height/2);
+        return;
+    }
+    // player move
+    if(keys['ArrowLeft'] && player.x>0) player.x -= player.speed;
+    if(keys['ArrowRight'] && player.x+player.w < canvas.width) player.x += player.speed;
+
+    if(Math.random()<0.025) spawnObstacle();
+
+    ctx.fillStyle="#f9f6ee";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    // draw player
+    ctx.fillStyle="#b86026";
+    ctx.fillRect(player.x,player.y,player.w,player.h);
+
+    // obstacles
+    for(let i=obstacles.length-1;i>=0;i--){
+        const obs = obstacles[i];
+        obs.y += obs.speed;
+        ctx.fillStyle="#444";
+        ctx.fillRect(obs.x,obs.y,obs.w,obs.h);
+
+        if(rectCollision(player, obs)){
+            gameOver=true;
+        }
+        if(obs.y > canvas.height){
+            obstacles.splice(i,1);
+            score +=1;
+            scoreEl.textContent = score;
+        }
+    }
+    requestAnimationFrame(loop);
+}
+loop();
+</script>
 </body>
 </html>
