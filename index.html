@@ -3,40 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Chen Zihao</title>
+    <title>Chen Zihao | Home</title>
     <link rel="stylesheet" href="./style.css">
-    <style>
-        .contact-page a {
-            color: #9c5020;
-            text-decoration: none;
-        }
-        .contact-page a:hover {
-            text-decoration: underline;
-        }
-        .contact-row {
-            padding:6px 0;
-        }
-        .char-count {
-            font-size:13px;
-            opacity:0.65;
-            margin:4px 0 12px;
-        }
-        .send-btn {
-            background-color:#b86026;
-            color:white;
-            border:none;
-            padding:8px 18px;
-            border-radius:6px;
-            cursor:pointer;
-        }
-        .send-btn:hover {
-            background:#cc6c2c;
-        }
-        input, textarea {
-            border: 1px solid #bbb;
-            padding:4px;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -49,51 +17,23 @@
         </div>
     </nav>
 
-    <main class="page-container contact-page">
-        <h1>Contact</h1>
-        <p>Questions about this project, broken links, or feedback — reach me here.</p>
-
-        <section>
-            <h2>Direct</h2>
-            <div class="contact-row">Email &nbsp;&nbsp;&nbsp; <a href="mailto:x20250015@stu.hibiuh.edu.cn">x20250015@stu.hibiuh.edu.cn</a></div>
-            <div class="contact-row">GitHub &nbsp;&nbsp;&nbsp; <a href="https://github.com/Chen-Zihao-Y" target="_blank">github.com/Chen-Zihao-Y</a></div>
-            <div class="contact-row">Source &nbsp;&nbsp;&nbsp; <a href="https://github.com/Chen-Zihao-Y/learning-html-demo" target="_blank">learning-html-demo</a></div>
-        </section>
-
-        <section style="margin-top:32px;">
-            <h2>Send a message</h2>
-            <p>This site is static: no server, no database. Send opens your mail app with the subject and body filled in, and the message only leaves once you confirm there. If nothing opens, copy the address above.</p>
-
-            <form action="mailto:x20250015@stu.hibiuh.edu.cn" method="GET" enctype="text/plain">
-                <div style="margin:10px 0;">
-                    <label for="name">Name *</label><br>
-                    <input type="text" id="name" name="subject" required>
-                </div>
-                <div style="margin:10px 0;">
-                    <label for="sender-email">Your email *</label><br>
-                    <input type="email" id="sender-email" name="cc" required>
-                </div>
-                <div style="margin:10px 0;">
-                    <label for="msg">Message *</label><br>
-                    <textarea id="msg" name="body" maxlength="500" required></textarea>
-                    <div class="char-count">0 / 500 characters</div>
-                </div>
-                <button type="submit" class="send-btn">Send</button>
-            </form>
-        </section>
+    <main class="home-container">
+        <div class="hero-card">
+            <img src="./cover.jpg" alt="Cover image" style="width:100%; max-height:600px; object-fit:cover; border-radius:12px;">
+            <h1>Chen Zihao</h1>
+            <p>Computer Science — a website built entirely by hand.</p>
+            <section class="intro-list">
+                <h2>On this site</h2>
+                <ul>
+                    <li><a href="game.html">Dodge Runner Game — my interactive obstacle dodge game</a></li>
+                    <li><a href="about.html">About me — who I am</a></li>
+                    <li><a href="contact.html">Contact — how to reach me</a></li>
+                </ul>
+            </section>
+        </div>
     </main>
-
     <footer>
-        <p>© 2026 Chen Zihao · built by hand</p>
+        <p>Built by Chen Zihao · Web Technologies 2026</p>
     </footer>
-
-<script>
-const textarea = document.getElementById('msg');
-const countEl = document.querySelector('.char-count');
-textarea.addEventListener('input', ()=>{
-    countEl.textContent = `${textarea.value.length} / 500 characters`;
-})
-</script>
 </body>
 </html>
-
