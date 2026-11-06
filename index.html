@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dodge Runner - Avoid the Obstacles</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Project</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="game-header">
-        <h1>Dodge Runner</h1>
-        <p>Use ← → or A / D to move. Avoid the obstacles!</p>
-    </header>
+    <nav class="navbar">
+        <span class="brand">Jerry</span>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="game.html">Game</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-    <main class="game-area">
-        <div class="game-panel">
-            <div class="hud">
-                <span>Score: <strong id="score">0</strong></span>
-                <span>High Score: <strong id="highScore">0</strong></span>
-                <span>Speed: <strong id="speed">1</strong>x</span>
+    <main class="home-container">
+        <div class="hero-card">
+            <div class="hero-img">
+                <!-- 你可以替换成图片，也可以先保留这个色块 -->
+                <div class="cover-bg"></div>
             </div>
-
-            <div id="gameContainer" class="game-container">
-                <div id="player" class="player"></div>
-
-                <div id="startScreen" class="overlay">
-                    <div class="overlay-box">
-                        <h2>Ready to Run?</h2>
-                        <p>Dodge the falling obstacles as long as you can.</p>
-                        <button id="startBtn" class="primary-btn">Start Game</button>
-                    </div>
-                </div>
-
-                <div id="gameOverScreen" class="overlay hidden">
-                    <div class="overlay-box">
-                        <h2>Game Over</h2>
-                        <p>Your Score: <strong id="finalScore">0</strong></p>
-                        <button id="restartBtn" class="primary-btn">Play Again</button>
-                    </div>
-                </div>
-            </div>
+            <h1>Your Name</h1>
+            <p>Computer Science — a website built entirely by hand.</p>
+            <section class="intro-list">
+                <h2>On this site</h2>
+                <ul>
+                    <li><a href="game.html">Dodge Runner Game — my interactive obstacle dodge game</a></li>
+                    <li><a href="about.html">About me — who I am</a></li>
+                    <li><a href="contact.html">Contact — how to reach me</a></li>
+                </ul>
+            </section>
         </div>
     </main>
-
-    <footer class="game-footer">
-        <p>WebTech Interactive Game Project</p>
+    <footer>
+        <p>Built by Jerry · Web Technologies 2026</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
+

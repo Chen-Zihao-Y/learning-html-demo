@@ -4,36 +4,90 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Roboto, Arial, sans-serif;
 }
-
 body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
-    overflow-x: hidden;
+    background: #f8f6f0;
+    color: #222;
+    line-height: 1.6;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+}
+.brand {
+    font-weight: bold;
+    font-size: 18px;
+    color: #992222;
+}
+.nav-links a {
+    margin-left: 24px;
+    color: #222;
+    text-decoration: none;
+}
+.nav-links a:hover {
+    text-decoration: underline;
+}
+.home-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px 40px;
+}
+.cover-bg {
+    width: 100%;
+    height: 280px;
+    background: #335577;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+.hero-card h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+.intro-list {
+    margin-top:32px;
+}
+.intro-list ul {
+    margin-top:12px;
+    padding-left:20px;
+}
+.intro-list li {
+    margin:8px 0;
+}
+.intro-list a {
+    color:#004499;
+}
+.page-container {
+    max-width:900px;
+    margin: 40px auto;
+    padding:0 32px;
+}
+footer {
+    padding: 40px 32px;
+    font-size: 14px;
+    opacity:0.7;
 }
 
+/* ===== 游戏专用样式 ===== */
 .game-header {
     text-align: center;
     padding: 30px 20px 10px;
+    color:#fff;
 }
-
 .game-header h1 {
     font-size: 34px;
     margin-bottom: 8px;
     letter-spacing: 1px;
 }
-
 .game-header p {
     opacity: 0.85;
     font-size: 15px;
 }
-
 .game-area {
     display: flex;
     justify-content: center;
     padding: 20px;
 }
-
 .game-panel {
     width: 100%;
     max-width: 500px;
@@ -43,7 +97,6 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(12px);
 }
-
 .hud {
     display: flex;
     justify-content: space-between;
@@ -53,12 +106,11 @@ body {
     background: rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     font-size: 14px;
+    color:#fff;
 }
-
 .hud strong {
     color: #00dbde;
 }
-
 .game-container {
     position: relative;
     width: 100%;
@@ -68,7 +120,6 @@ body {
     overflow: hidden;
     border: 2px solid rgba(255, 255, 255, 0.15);
 }
-
 .player {
     position: absolute;
     bottom: 20px;
@@ -82,7 +133,6 @@ body {
     transition: left 0.08s linear;
     z-index: 2;
 }
-
 .obstacle {
     position: absolute;
     top: -40px;
@@ -92,7 +142,6 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(255, 75, 43, 0.8);
 }
-
 .overlay {
     position: absolute;
     inset: 0;
@@ -103,11 +152,9 @@ body {
     z-index: 10;
     border-radius: 16px;
 }
-
 .overlay.hidden {
     display: none;
 }
-
 .overlay-box {
     background: rgba(255, 255, 255, 0.12);
     padding: 30px 36px;
@@ -116,18 +163,16 @@ body {
     backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     max-width: 320px;
+    color:#fff;
 }
-
 .overlay-box h2 {
     margin-bottom: 12px;
     font-size: 26px;
 }
-
 .overlay-box p {
     margin-bottom: 20px;
     opacity: 0.9;
 }
-
 .primary-btn {
     padding: 12px 24px;
     border: none;
@@ -139,31 +184,22 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .primary-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 219, 222, 0.4);
 }
-
 .game-footer {
     text-align: center;
     padding: 20px;
     opacity: 0.6;
     font-size: 14px;
+    color:#fff;
 }
-
 @media (max-width: 520px) {
-    .game-header h1 {
-        font-size: 26px;
+    .nav-links a {
+        margin-left: 10px;
     }
-
     .game-container {
         height: 460px;
-    }
-
-    .hud {
-        flex-direction: column;
-        gap: 6px;
-        align-items: flex-start;
     }
 }
